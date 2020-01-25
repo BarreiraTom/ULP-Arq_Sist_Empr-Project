@@ -38,6 +38,7 @@ request(
         if (res) {
             var json = JSON.parse(res.body);
             console.log('Access Token:', json.access_token);
+            return json.access_token;
         } else {
             console.log('Could not obtain acess token.');
         }

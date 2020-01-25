@@ -1,3 +1,38 @@
+:root{
+    --color-dBlue: #192965;
+    --color-lBlue: #BBCFFF;
+    --color-dGray: #515052;
+    --color-lGray: #F0EFEF;
+    --color-white: #FFFFFA;
+}
+
+
 body{
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: var(--color-lGray);
+}
+
+header{
+    background-color: var(--color-dBlue);
+    padding: .7rem 1.5rem;
+}
+
+header .menu{
+    transition: .5s;
+    margin: .1rem 0 0 0;
+    padding: .7rem 1.5rem;
+    color: var(--color-white);
+    font-family: Lato, Helvetica;
+    font-weight: 700;
+    font-size: 13pt;
+    text-decoration: none;
+}
+header .menu.active, header .menu:hover{
+    transition: .25s;
+    padding: .7rem 1.5rem .8rem;
+    background-color: var(--color-lBlue);
+    color: var(--color-dGray);
 }
