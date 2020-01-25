@@ -9,6 +9,9 @@
   "author": "Jorge Gonçalves, João Barreira, Jorge Pinheiro",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
+    "axios-oauth-client": "^1.2.1",
+    "axios-token-interceptor": "^0.2.0",
     "body-parser": "^1.19.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",

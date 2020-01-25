@@ -37,7 +37,7 @@ request(
     function(err, res) {
         if (res) {
             var json = JSON.parse(res.body);
-            console.log('Access Token:', json.access_token);
+            // console.log('Access Token:', json.access_token);
             return json.access_token;
         } else {
             console.log('Could not obtain acess token.');
@@ -49,10 +49,7 @@ app.use(homeRoutes);
 
 app.use(errorController.get404);
 
-let port = process.env.PORT;
-if (port == null || port == '') {
-    port = 3000;
-}
+const port = process.env.PORT || 3000;
 app.listen(port, function() {
     console.log('Server started');
 });
