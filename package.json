@@ -1,0 +1,11 @@
+{
+  "name": "projeto_arquitetura_de_sistemasemrpesariais",
+  "version": "1.0.0",
+  "description": "Implementação de um middleware para estabelecer comunicação entre um ERP e CRM",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jorge Gonçalves, João Barreira, Jorge Pinheiro",
+  "license": "ISC"
+}
