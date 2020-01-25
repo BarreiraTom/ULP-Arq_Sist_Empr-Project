@@ -23,4 +23,10 @@ app.use(homeRoutes);
 
 app.use(errorController.get404);
 
-app.listen(3000);
+let port = process.env.PORT;
+if (port == null || port == '') {
+    port = 3000;
+}
+app.listen(port, function() {
+    console.log('Server started for ToDoList v2');
+});
