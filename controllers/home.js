@@ -42,6 +42,17 @@ exports.getFaturas = (req, res, next) => {
     });
 };
 
+exports.getFaturaByID = (req, res, next) => {
+
+    const id = req.params.id;
+
+    res.render('app-interface/fatura-by-id', {
+        pageTitle: 'Fatura',
+        path: '/app-interface/fatura-by-id',
+        test: 'hello'
+    });
+};
+
 exports.getEncomendas = (req, res, next) => {
     request({
         url: 'https://identity.primaverabss.com/core/connect/token',
@@ -64,7 +75,7 @@ exports.getEncomendas = (req, res, next) => {
             }
         })
             .then(respBody => {
-                res.render('app-interface/Encomendas', {
+                res.render('app-interface/encomendas', {
                     pageTitle: 'Encomendas',
                     path: '/app-interface/encomendas',
                     orders: JSON.parse(respBody)
