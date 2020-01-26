@@ -9,4 +9,8 @@ router.get('/crm/faturas', crmController.getCRMFaturas);
 
 router.post('/crm/insert-fatura', crmController.postCRMFatura);
 
+router.get('/crm/encomendas', crmController.getCRMEncomendas);
+
+router.post('/crm/insert-encomenda', crmController.postCRMEncomendas);
+
 module.exports = router;

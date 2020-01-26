@@ -4,20 +4,20 @@
     <table class="table myTable">
         <tr>
             <th scope="col">Encomenda</th>
-            <th scope="col">Entidade</th scope="col">
+            <th scope="col">Entidade</th>
             <th scope="col">NIF</th>
             <th scope="col">Nome</th>
             <th scope="col">Data</th>
             <th scope="col">Total</th>
         </tr>
-        <% for(let order of orders) { %>
+        <% for(let encomenda of encomendas) { %>
         <tr>
-            <td  scope="row"><%= order.naturalKey %></td>
-            <td><%= order.accountingParty %></td>
-            <td><%= order.buyerCustomerPartyTaxId %></td>
-            <td><%= order.buyerCustomerPartyName %></td>
-            <td><%= order.documentDate.replace("T", " ") %></td>
-            <td><%= order.payableAmount.amount %><%=order.grossValue.symbol%></td>
+            <td scope="row"><%= encomenda.Name %></td>
+            <td><%= encomenda.Entidade %></td>
+            <td><%= encomenda.NIF %></td>
+            <td><%= encomenda.Nome %></td>
+            <td><%= encomenda.Data.replace("T", " ") %></td>
+            <td><%= encomenda.Total %></td>
         </tr>
         <%}%>
     </table>

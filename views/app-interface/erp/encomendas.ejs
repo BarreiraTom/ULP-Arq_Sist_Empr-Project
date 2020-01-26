@@ -4,15 +4,15 @@
     <table class="table myTable">
         <tr>
             <th scope="col">Encomenda</th>
-            <th scope="col">Entidade</th scope="col">
+            <th scope="col">Entidade</th>
             <th scope="col">NIF</th>
             <th scope="col">Nome</th>
             <th scope="col">Data</th>
             <th scope="col">Total</th>
         </tr>
         <% for(let order of orders) { %>
-        <tr>
-            <td  scope="row"><%= order.naturalKey %></td>
+        <tr  id="<%= order.id %>" onclick="redirect('<%= order.id %>')">
+            <td scope="row"><%= order.naturalKey %></td>
             <td><%= order.accountingParty %></td>
             <td><%= order.buyerCustomerPartyTaxId %></td>
             <td><%= order.buyerCustomerPartyName %></td>
@@ -21,5 +21,11 @@
         </tr>
         <%}%>
     </table>
+
+    <script>
+        function redirect(id) {
+            window.location.href = '/erp/encomenda/' + id;
+        }
+    </script>
 </body>
 <%- include('../../includes/footer.ejs') %>
