@@ -4,14 +4,14 @@
     <table class="table myTable">
         <tr>
             <th scope="col">Fatura</th>
-            <th scope="col">Entidade</th scope="col">
-            <th scope="col">NIF</th scope="col">
+            <th scope="col">Entidade</th>
+            <th scope="col">NIF</th>
             <th scope="col">Data</th>
-            <th scope="col">Total</th scope="col">
+            <th scope="col">Total</th>
         </tr>
         <% for(let bill of billing) { %>
         <tr id="<%= bill.id %>" onclick="redirect('<%= bill.id %>')">
-            <td scope="row"><%= bill.naturalKey %></td scope="col">
+            <td scope="row"><%= bill.naturalKey %></td>
             <td><%= bill.accountingPartyName %></td>
             <td><%= bill.buyerCustomerPartyTaxId %></td>
             <td><%= bill.documentDate.replace("T", " ") %></td>
