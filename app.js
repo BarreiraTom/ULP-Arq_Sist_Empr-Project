@@ -28,5 +28,5 @@ app.use(errorController.get404);
 
 const port = process.env.PORT || 3000;
 app.listen(port, function() {
-    console.log('Server started');
+    console.log('Server connected ate ' + new Date().toLocaleString());
 });
