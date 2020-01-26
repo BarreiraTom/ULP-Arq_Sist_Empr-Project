@@ -1,6 +1,23 @@
 <%- include('../includes/head.ejs') %>
 <body>
     <%- include('../includes/navigation.ejs') %>
-    <%- billing %>
+    <table>
+        <tr>
+            <th>Fatura</th>
+            <th>Entidade</th>
+            <th>NIF</th>
+            <th>Data</th>
+            <th>Total</th>
+        </tr>
+        <% for(let bill of billing) { %>
+        <tr>
+            <td><%= bill.naturalKey %></td>
+            <td><%= bill.accountingPartyName %></td>
+            <td><%= bill.buyerCustomerPartyTaxId %></td>
+            <td><%= bill.documentDate.replace("T", " ") %></td>
+            <td><%= bill.payableAmount.amount %><%=bill.payableAmount.symbol%></td>
+        </tr>
+        <%}%>
+    </table>
 </body>
 <%- include('../includes/footer.ejs') %>

@@ -1,5 +1,25 @@
 <%- include('../includes/head.ejs') %>
 <body>
     <%- include('../includes/navigation.ejs') %>
+    <table>
+        <tr>
+            <th>Encomenda</th>
+            <th>Entidade</th>
+            <th>NIF</th>
+            <th>Nome</th>
+            <th>Data</th>
+            <th>Total</th>
+        </tr>
+        <% for(let order of orders) { %>
+        <tr>
+            <td><%= order.naturalKey %></td>
+            <td><%= order.accountingParty %></td>
+            <td><%= order.buyerCustomerPartyTaxId %></td>
+            <td><%= order.buyerCustomerPartyName %></td>
+            <td><%= order.documentDate.replace("T", " ") %></td>
+            <td><%= order.payableAmount.amount %><%=order.grossValue.symbol%></td>
+        </tr>
+        <%}%>
+    </table>
 </body>
 <%- include('../includes/footer.ejs') %>
