@@ -1,0 +1,34 @@
+<%- include('../includes/head.ejs') %>
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <table class="billingID">
+        <tr>
+            <th>Fatura</th>                     <th>Data</th>
+        </tr>
+        <tr>
+            <td><%= billingID.naturalKey %></td><td><%= billingID.documentDate.replace("T", " ") %></td>
+        </tr>
+        <tr>
+            <th></th><th>Entidade</th>
+        </tr>
+        <tr>
+            <td></td><td><%= billingID.accountingPartyName %></td>
+        </tr>
+        <tr>
+            <th></th><th>Armazem</th>
+        </tr>
+        <tr>
+            <td></td><td><%= billingID.documentLines[0].warehouseDescription %></td>
+        </tr>
+        <tr>
+            <td><br><br><br><br><br><br></td><td></td>
+        </tr>
+        <tr>
+            <th>Descrição</th><th>Preço</th>
+        </tr>
+        <tr>
+            <td><%= billingID.documentLines[0].complementaryDescription %></td><td><%= billingID.payableAmount.amount %><%=billingID.payableAmount.symbol%></td>
+        </tr>
+    </table>
+</body>
+<%- include('../includes/footer.ejs') %>

@@ -7,71 +7,71 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    background-color: var(--color-lGray);
+    font-family: Arial, Helvetica, sans-serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100vh !important;
+    background-color: var(--color-lGray) !important;
 }
 
 header {
-    background-color: var(--color-dBlue);
-    padding: 0.7rem 1.5rem;
+    background-color: var(--color-dBlue) !important;
+    padding: 0.7rem 1.5rem !important;
 }
 .menu-left,
 .menu-right {
-    display: inline-block;
+    display: inline-block !important;
 }
 .menu-right {
-    float: right;
+    float: right !important;
 }
 
 header .menu {
-    -transition: 0.5s;
-    margin: 0.1rem 0 0 0;
-    padding: 0.7rem 1.5rem;
-    color: var(--color-white);
-    font-family: Lato, Helvetica;
-    font-weight: 700;
-    font-size: 13pt;
-    text-decoration: none;
+    -transition: 0.5s !important;
+    margin: 0.1rem 0 0 0 !important;
+    padding: 0.7rem 1.5rem !important;
+    color: var(--color-white) !important;
+    font-family: Lato, Helvetica !important;
+    font-weight: 700 !important;
+    font-size: 13pt !important;
+    text-decoration: none !important;
 }
 header .menu.active,
 header .menu:hover {
     transition: 0.25s;
     padding: 0.7rem 1.5rem 1rem !important;
-    background-color: var(--color-lBlue);
-    color: var(--color-dGray);
+    background-color: var(--color-lBlue) !important;
+    color: var(--color-dGray) !important;
 }
 
 .myTable {
-    width: 95%;
-    margin: auto;
+    width: 95% !important;
+    margin: auto !important;
 }
 .myTable tr:not(:first-child) {
-    -transition: 0.25s;
+    transition: 0.25s !important;
 }
 
 .myTable tr:not(:first-child):hover {
-    transition: 0.25s;
-    background-color: var(--color-white);
+    transition: 0.25s !important;
+    background-color: var(--color-white) !important;
 }
 
 .myTable tr td:last-child {
-    text-align: right;
+    text-align: right !important;
 }
 
 .billingID {
-    margin: 5rem auto;
-    width: 70rem;
+    margin: 5rem auto !important;
+    width: 70rem !important;
 }
 
 .billingID tr td,
 .billingID tr th {
-    padding: 0.3rem 3rem 0.2rem;
+    padding: 0.3rem 3rem 0.2rem !important;
 }
 
 .billingID tr td:last-child,
 .billingID tr th:last-child {
-    text-align: right;
+    text-align: right !important;
 }
