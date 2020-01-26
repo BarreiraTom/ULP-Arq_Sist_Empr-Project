@@ -19,11 +19,17 @@ header {
     padding: 0.7rem 1.5rem !important;
 }
 .menu-left,
-.menu-right {
+.menu-right,
+.menu-center {
     display: inline-block !important;
+    margin: 0;
+    width: 33%;
+}
+.menu-center {
+    text-align: center !important;
 }
 .menu-right {
-    float: right !important;
+    text-align: right !important;
 }
 
 header .menu {
