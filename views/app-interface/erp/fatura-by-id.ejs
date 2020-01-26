@@ -38,15 +38,31 @@
             <td><%= billingID.documentLines[0].complementaryDescription %></td>
             <td><%= billingID.payableAmount.amount %><%=billingID.payableAmount.symbol%></td>
         </tr>
+        <br>
+        <tr>
+            <td colspan="2">
+                <form action="/crm/insert-fatura" method="post">
+                    <input type="hidden" name="fatura" value="<%= billingID.naturalKey %> " />
+                    <input type="hidden" name="data" value="<%= billingID.documentDate %> " />
+                    <input
+                        type="hidden"
+                        name="entidade"
+                        value="<%= billingID.accountingPartyName %> "
+                    />
+                    <input
+                        type="hidden"
+                        name="nif"
+                        value="<%= billingID.buyerCustomerPartyTaxId %> "
+                    />
+                    <input
+                        type="hidden"
+                        name="total"
+                        value="<%= billingID.payableAmount.amount %> "
+                    />
+                    <button type="submit">Enviar</button>
+                </form>
+            </td>
+        </tr>
     </table>
-
-    <form action="/crm/insert-fatura" method="post">
-        <input type="hidden" name="fatura" value="<%= billingID.naturalKey %> " />
-        <input type="hidden" name="data" value="<%= billingID.documentDate %> " />
-        <input type="hidden" name="entidade" value="<%= billingID.accountingPartyName %> " />
-        <input type="hidden" name="nif" value="<%= billingID.buyerCustomerPartyTaxId %> " />
-        <input type="hidden" name="total" value="<%= billingID.payableAmount.amount %> " />
-        <button type="submit">Enviar</button>
-    </form>
 </body>
 <%- include('../../includes/footer.ejs') %>

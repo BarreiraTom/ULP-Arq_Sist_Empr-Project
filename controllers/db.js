@@ -6,7 +6,7 @@ exports.getDBFaturas= (req, res, next) => {
         console.log(faturas);
         res.render('app-interface/db/faturas', {
             pageTitle: 'DB Faturas',
-            path: 'app-interface/db/faturas',
+            path: '/app-interface/db/faturas',
             faturas: faturas
         });
     })
@@ -17,7 +17,7 @@ exports.getDBEncomendas= (req, res, next) => {
         console.log(encomendas);
         res.render('app-interface/db/encomendas', {
             pageTitle: 'DB Encomendas',
-            path: 'app-interface/db/encomendas',
+            path: '/app-interface/db/encomendas',
             encomendas: encomendas
         });
     })

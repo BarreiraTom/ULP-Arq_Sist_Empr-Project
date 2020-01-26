@@ -18,7 +18,7 @@ exports.getCRMFaturas = (req, res, next) => {
                     console.log(JSON.parse(response.body).data);
                     res.render('app-interface/crm/faturas', {
                         pageTitle: 'CRM Faturas',
-                        path: 'app-interface/crm/faturas',
+                        path: '/app-interface/crm/faturas',
                         faturas: JSON.parse(response.body).data
                     });
                 })
@@ -71,7 +71,7 @@ exports.getCRMEncomendas = (req, res, next) => {
                 .then(response => {
                     res.render('app-interface/crm/encomendas', {
                         pageTitle: 'CRM Encomendas',
-                        path: 'app-interface/crm/encomendas',
+                        path: '/app-interface/crm/encomendas',
                         encomendas: JSON.parse(response.body).data
                     });
                 })
