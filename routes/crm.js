@@ -7,4 +7,6 @@ const router = express.Router();
 
 router.get('/crm/faturas', crmController.getCRMFaturas);
 
+router.post('/crm/insert-fatura', crmController.postCRMFatura);
+
 module.exports = router;
