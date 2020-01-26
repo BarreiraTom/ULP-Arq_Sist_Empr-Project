@@ -21,7 +21,7 @@ header{
 }
 
 header .menu{
-    transition: .5s;
+    -transition: .5s;
     margin: .1rem 0 0 0;
     padding: .7rem 1.5rem;
     color: var(--color-white);
@@ -32,7 +32,37 @@ header .menu{
 }
 header .menu.active, header .menu:hover{
     transition: .25s;
-    padding: .7rem 1.5rem .8rem;
+    padding: .7rem 1.5rem 1rem !important;
     background-color: var(--color-lBlue);
     color: var(--color-dGray);
+}
+
+.myTable{
+    width: 95%;
+    margin: auto;
+}
+.myTable tr:not(:first-child){
+    -transition: .25s;
+}
+
+.myTable tr:not(:first-child):hover{
+    transition: .25s;
+    background-color: var(--color-white);
+}
+
+.myTable tr td:last-child{
+    text-align: right;
+}
+
+.billingID{
+    margin: 5rem auto;
+    width: 70rem;
+}
+
+.billingID tr td, .billingID tr th{
+    padding: .3rem 3rem .2rem;
+}
+
+.billingID tr td:last-child, .billingID tr th:last-child{
+    text-align: right;
 }

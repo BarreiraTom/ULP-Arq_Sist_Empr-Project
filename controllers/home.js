@@ -8,6 +8,9 @@ exports.getIndex = (req, res, next) => {
     });
 };
 
+//
+//FATURAS
+//
 exports.getFaturas = (req, res, next) => {
     request({
         url: 'https://identity.primaverabss.com/core/connect/token',
@@ -42,6 +45,46 @@ exports.getFaturas = (req, res, next) => {
     });
 };
 
+exports.getFaturaByID = (req, res, next) => {
+
+    const billingID= req.params.id
+
+    request({
+        url: 'https://identity.primaverabss.com/core/connect/token',
+        method: 'POST',
+        auth: {
+            user: 'ERP-TO-CRM', // TODO : put your application client id here
+            pass: '1518606f-a8d4-40bd-ae5b-b192da6a859c' // TODO : put your application client secret here
+        },
+        form: {
+            grant_type: 'client_credentials',
+            scope: 'application'
+        }
+    }).then(respToken => {
+        request({
+            url: 'https://my.jasminsoftware.com/api/230056/230056-0001/billing/invoices/'+billingID,
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                Authorization: 'Bearer ' + JSON.parse(respToken).access_token
+            }
+        })
+            .then(respBody => {
+                res.render('app-interface/fatura-by-id', {
+                    pageTitle: 'Fatura '+JSON.parse(respBody).naturalKey,
+                    path: '/app-interface/fatura-by-id',
+                    billingID: JSON.parse(respBody)
+                });
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    });
+};
+
+//
+//ENCOMENDAS
+//
 exports.getEncomendas = (req, res, next) => {
     request({
         url: 'https://identity.primaverabss.com/core/connect/token',
@@ -64,7 +107,7 @@ exports.getEncomendas = (req, res, next) => {
             }
         })
             .then(respBody => {
-                res.render('app-interface/Encomendas', {
+                res.render('app-interface/encomendas', {
                     pageTitle: 'Encomendas',
                     path: '/app-interface/encomendas',
                     orders: JSON.parse(respBody)

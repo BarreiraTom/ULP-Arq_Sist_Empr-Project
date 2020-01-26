@@ -1,17 +1,17 @@
 <%- include('../includes/head.ejs') %>
 <body>
     <%- include('../includes/navigation.ejs') %>
-    <table>
+    <table class="table myTable">
         <tr>
-            <th>Fatura</th>
-            <th>Entidade</th>
-            <th>NIF</th>
-            <th>Data</th>
-            <th>Total</th>
+            <th scope="col">Fatura</th>
+            <th scope="col">Entidade</th scope="col">
+            <th scope="col">NIF</th scope="col">
+            <th scope="col">Data</th>
+            <th scope="col">Total</th scope="col">
         </tr>
         <% for(let bill of billing) { %>
-        <tr>
-            <td><%= bill.naturalKey %></td>
+        <tr id="<%= bill.id %>" onclick="redirect('<%= bill.id %>')">
+            <td scope="row"><%= bill.naturalKey %></td scope="col">
             <td><%= bill.accountingPartyName %></td>
             <td><%= bill.buyerCustomerPartyTaxId %></td>
             <td><%= bill.documentDate.replace("T", " ") %></td>
@@ -19,5 +19,11 @@
         </tr>
         <%}%>
     </table>
+    <script>
+
+        function redirect(url){
+            window.location.href = "/faturas/"+url;
+        }
+    </script>
 </body>
 <%- include('../includes/footer.ejs') %>

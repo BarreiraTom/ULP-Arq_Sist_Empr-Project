@@ -1,18 +1,18 @@
 <%- include('../includes/head.ejs') %>
 <body>
     <%- include('../includes/navigation.ejs') %>
-    <table>
+    <table class="table myTable">
         <tr>
-            <th>Encomenda</th>
-            <th>Entidade</th>
-            <th>NIF</th>
-            <th>Nome</th>
-            <th>Data</th>
-            <th>Total</th>
+            <th scope="col">Encomenda</th>
+            <th scope="col">Entidade</th scope="col">
+            <th scope="col">NIF</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Data</th>
+            <th scope="col">Total</th>
         </tr>
         <% for(let order of orders) { %>
         <tr>
-            <td><%= order.naturalKey %></td>
+            <td  scope="row"><%= order.naturalKey %></td>
             <td><%= order.accountingParty %></td>
             <td><%= order.buyerCustomerPartyTaxId %></td>
             <td><%= order.buyerCustomerPartyName %></td>
