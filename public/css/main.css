@@ -1,13 +1,12 @@
-:root{
+:root {
     --color-dBlue: #192965;
-    --color-lBlue: #BBCFFF;
+    --color-lBlue: #bbcfff;
     --color-dGray: #515052;
-    --color-lGray: #F0EFEF;
-    --color-white: #FFFFFA;
+    --color-lGray: #f0efef;
+    --color-white: #fffffa;
 }
 
-
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
@@ -15,54 +14,64 @@ body{
     background-color: var(--color-lGray);
 }
 
-header{
+header {
     background-color: var(--color-dBlue);
-    padding: .7rem 1.5rem;
+    padding: 0.7rem 1.5rem;
+}
+.menu-left,
+.menu-right {
+    display: inline-block;
+}
+.menu-right {
+    float: right;
 }
 
-header .menu{
-    -transition: .5s;
-    margin: .1rem 0 0 0;
-    padding: .7rem 1.5rem;
+header .menu {
+    -transition: 0.5s;
+    margin: 0.1rem 0 0 0;
+    padding: 0.7rem 1.5rem;
     color: var(--color-white);
     font-family: Lato, Helvetica;
     font-weight: 700;
     font-size: 13pt;
     text-decoration: none;
 }
-header .menu.active, header .menu:hover{
-    transition: .25s;
-    padding: .7rem 1.5rem 1rem !important;
+header .menu.active,
+header .menu:hover {
+    transition: 0.25s;
+    padding: 0.7rem 1.5rem 1rem !important;
     background-color: var(--color-lBlue);
     color: var(--color-dGray);
 }
 
-.myTable{
+.myTable {
     width: 95%;
     margin: auto;
 }
-.myTable tr:not(:first-child){
-    -transition: .25s;
+.myTable tr:not(:first-child) {
+    -transition: 0.25s;
 }
 
-.myTable tr:not(:first-child):hover{
-    transition: .25s;
+.myTable tr:not(:first-child):hover {
+    transition: 0.25s;
     background-color: var(--color-white);
 }
 
-.myTable tr td:last-child{
+.myTable tr td:last-child {
     text-align: right;
 }
 
-.billingID{
+.billingID {
     margin: 5rem auto;
     width: 70rem;
 }
 
-.billingID tr td, .billingID tr th{
-    padding: .3rem 3rem .2rem;
+.billingID tr td,
+.billingID tr th {
+    padding: 0.3rem 3rem 0.2rem;
 }
 
-.billingID tr td:last-child, .billingID tr th:last-child{
+.billingID tr td:last-child,
+.billingID tr th:last-child {
     text-align: right;
 }

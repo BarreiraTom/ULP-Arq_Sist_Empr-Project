@@ -1,5 +1,22 @@
 <header>
-    <a class="menu<%= path === '/app-interface/home' ? ' active':'' %>" href="/">Home</a> 
-    <a class="menu<%= path === '/app-interface/faturas' ? ' active':'' %>" href="/faturas">Faturas</a>    
-    <a class="menu<%= path === '/app-interface/encomendas' ? ' active':'' %>" href="/encomendas">Encomendas</a>
+    <div class="menu-left">
+        <a class="menu<%= path === '/app-interface/home' ? ' active':'' %>" href="/">Home</a>
+        <a
+            class="menu<%= path === '/app-interface/erp/faturas' ? ' active':'' %>"
+            href="/erp/faturas"
+            >ERP Faturas</a
+        >
+        <a
+            class="menu<%= path === '/app-interface/erp/encomendas' ? ' active':'' %>"
+            href="/erp/encomendas"
+            >ERP Encomendas</a
+        >
+    </div>
+    <div class="menu-right">
+        <a
+            class="menu<%= path === '/app-interface/crm/faturas' ? ' active':'' %>"
+            href="/crm/faturas"
+            >CRM Faturas</a
+        >
+    </div>
 </header>

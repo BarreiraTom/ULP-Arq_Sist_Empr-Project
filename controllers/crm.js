@@ -13,7 +13,7 @@ exports.getCRMFaturas = (req, res, next) => {
             })
                 .then(response => {
                     console.log(JSON.parse(response.body));
-                    res.status(404).render('app-interface/404', {
+                    res.status(404).render('app-interface/crm/faturas', {
                         pageTitle: 'Page Not Found',
                         path: '/404',
                         data: response.body

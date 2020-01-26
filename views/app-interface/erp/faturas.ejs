@@ -1,6 +1,6 @@
-<%- include('../includes/head.ejs') %>
+<%- include('../../includes/head.ejs') %>
 <body>
-    <%- include('../includes/navigation.ejs') %>
+    <%- include('../../includes/navigation.ejs') %>
     <table class="table myTable">
         <tr>
             <th scope="col">Fatura</th>
@@ -22,8 +22,8 @@
     <script>
 
         function redirect(url){
-            window.location.href = "/faturas/"+url;
+            window.location.href = "/erp/faturas/"+url;
         }
     </script>
 </body>
-<%- include('../includes/footer.ejs') %>
+<%- include('../../includes/footer.ejs') %>
