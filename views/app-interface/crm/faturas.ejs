@@ -1,0 +1,23 @@
+<%- include('../../includes/head.ejs') %>
+<body>
+    <%- include('../../includes/navigation.ejs') %>
+    <table class="table myTable">
+        <tr>
+            <th scope="col">Fatura</th>
+            <th scope="col">Entidade</th scope="col">
+            <th scope="col">NIF</th scope="col">
+            <th scope="col">Data</th>
+            <th scope="col">Total</th scope="col">
+        </tr>
+        <% for(let fatura of faturas) { %>
+        <tr>
+            <td scope="row"><%= fatura.Name %></td scope="col">
+            <td><%= fatura.Entidade %>€</td>
+            <td><%= fatura.NIF %>€</td>
+            <td><%= fatura.Data %>€</td>
+            <td><%= fatura.Total %>€</td>
+        </tr>
+        <%}%>
+    </table>
+</body>
+<%- include('../../includes/footer.ejs') %>

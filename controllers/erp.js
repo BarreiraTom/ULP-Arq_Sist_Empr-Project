@@ -112,3 +112,39 @@ exports.getEncomendas = (req, res, next) => {
             });
     });
 };
+
+exports.getEncomendaByID = (req, res, next) => {
+    const orderID = req.params.id;
+
+    request({
+        url: 'https://identity.primaverabss.com/core/connect/token',
+        method: 'POST',
+        auth: {
+            user: 'ERP-TO-CRM', // TODO : put your application client id here
+            pass: '1518606f-a8d4-40bd-ae5b-b192da6a859c' // TODO : put your application client secret here
+        },
+        form: {
+            grant_type: 'client_credentials',
+            scope: 'application'
+        }
+    }).then(respToken => {
+        request({
+            url: 'https://my.jasminsoftware.com/api/230056/230056-0001/sales/orders/' + orderID,
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                Authorization: 'Bearer ' + JSON.parse(respToken).access_token
+            }
+        })
+            .then(respBody => {
+                res.render('app-interface/erp/encomenda-by-id', {
+                    pageTitle: 'Encomenda ' + JSON.parse(respBody).naturalKey,
+                    path: '/app-interface/erp/encomenda-by-id',
+                    orderID: JSON.parse(respBody)
+                });
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    });
+};

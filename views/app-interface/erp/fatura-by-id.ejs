@@ -3,32 +3,50 @@
     <%- include('../../includes/navigation.ejs') %>
     <table class="billingID">
         <tr>
-            <th>Fatura</th>                     <th>Data</th>
+            <th>Fatura</th>
+            <th>Data</th>
         </tr>
         <tr>
-            <td><%= billingID.naturalKey %></td><td><%= billingID.documentDate.replace("T", " ") %></td>
+            <td><%= billingID.naturalKey %></td>
+            <td><%= billingID.documentDate.replace("T", " ") %></td>
         </tr>
         <tr>
-            <th></th><th>Entidade</th>
+            <th></th>
+            <th>Entidade</th>
         </tr>
         <tr>
-            <td></td><td><%= billingID.accountingPartyName %></td>
+            <td></td>
+            <td><%= billingID.accountingPartyName %></td>
         </tr>
         <tr>
-            <th></th><th>Armazem</th>
+            <th></th>
+            <th>Armazem</th>
         </tr>
         <tr>
-            <td></td><td><%= billingID.documentLines[0].warehouseDescription %></td>
+            <td></td>
+            <td><%= billingID.documentLines[0].warehouseDescription %></td>
         </tr>
         <tr>
-            <td><br><br><br><br><br><br></td><td></td>
+            <td><br /><br /><br /><br /><br /><br /></td>
+            <td></td>
         </tr>
         <tr>
-            <th>Descrição</th><th>Preço</th>
+            <th>Descrição</th>
+            <th>Preço</th>
         </tr>
         <tr>
-            <td><%= billingID.documentLines[0].complementaryDescription %></td><td><%= billingID.payableAmount.amount %><%=billingID.payableAmount.symbol%></td>
+            <td><%= billingID.documentLines[0].complementaryDescription %></td>
+            <td><%= billingID.payableAmount.amount %><%=billingID.payableAmount.symbol%></td>
         </tr>
     </table>
+
+    <form action="/crm/insert-fatura" method="post">
+        <input type="hidden" name="fatura" value="<%= billingID.naturalKey %> " />
+        <input type="hidden" name="data" value="<%= billingID.documentDate %> " />
+        <input type="hidden" name="entidade" value="<%= billingID.accountingPartyName %> " />
+        <input type="hidden" name="nif" value="<%= billingID.buyerCustomerPartyTaxId %> " />
+        <input type="hidden" name="total" value="<%= billingID.payableAmount.amount %> " />
+        <button type="submit">Enviar</button>
+    </form>
 </body>
 <%- include('../../includes/footer.ejs') %>
