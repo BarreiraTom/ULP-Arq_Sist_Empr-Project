@@ -21,6 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(homeRoutes);
+app.use(crmRoutes);
 
 app.use(errorController.get404);
 
