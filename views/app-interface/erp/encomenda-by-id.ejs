@@ -32,12 +32,21 @@
         </tr>
         <tr>
             <th>Descrição</th>
-            <th>Preço</th>
         </tr>
 
+        <% for(document of orderID.documentLines){ %>
         <tr>
-            <td><%= orderID.documentLines[0].salesItemDescription %></td>
-            <td><%= orderID.payableAmount.amount %><%=orderID.payableAmount.symbol%></td>
+            <td><%= document.salesItemDescription %></td>
+        </tr>
+        <% } %>
+
+        <tr>
+            <th colspan="2">Preço</th>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <%= orderID.payableAmount.amount %><%=orderID.payableAmount.symbol%>
+            </td>
         </tr>
         <tr>
             <td colspan="2">

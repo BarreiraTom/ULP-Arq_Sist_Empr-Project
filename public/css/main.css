@@ -13,7 +13,13 @@ body {
     min-height: 100vh !important;
     background-color: var(--color-lGray) !important;
 }
-
+h1 {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 header {
     background-color: var(--color-dBlue) !important;
     padding: 0.7rem 1.5rem !important;
@@ -33,7 +39,7 @@ header {
 }
 
 header .menu {
-    -transition: 0.5s !important;
+    /* -transition: 0.5s !important; */
     margin: 0.1rem 0 0 0 !important;
     padding: 0.7rem 1.5rem !important;
     color: var(--color-white) !important;
@@ -44,8 +50,8 @@ header .menu {
 }
 header .menu.active,
 header .menu:hover {
-    transition: 0.25s;
-    padding: 0.7rem 1.5rem 1rem !important;
+    transition: background 0.25s;
+    padding: 0.7rem 1.5rem 1.5rem !important;
     background-color: var(--color-lBlue) !important;
     color: var(--color-dGray) !important;
 }
@@ -55,11 +61,11 @@ header .menu:hover {
     margin: auto !important;
 }
 .myTable tr:not(:first-child) {
-    transition: 0.25s !important;
+    transition: background 0.25s !important;
 }
 
 .myTable tr:not(:first-child):hover {
-    transition: 0.25s !important;
+    transition: background 0.25s !important;
     background-color: var(--color-white) !important;
 }
 

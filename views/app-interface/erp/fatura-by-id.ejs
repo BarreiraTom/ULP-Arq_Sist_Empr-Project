@@ -32,13 +32,22 @@
         </tr>
         <tr>
             <th>Descrição</th>
-            <th>Preço</th>
+        </tr>
+        <% for(bill of billingID.documentLines){ %>
+        <tr>
+            <td><%= bill.complementaryDescription %></td>
+        </tr>
+        <% } %>
+
+        <tr>
+            <th colspan="2">Preço</th>
         </tr>
         <tr>
-            <td><%= billingID.documentLines[0].complementaryDescription %></td>
-            <td><%= billingID.payableAmount.amount %><%=billingID.payableAmount.symbol%></td>
+            <td colspan="2">
+                <%= billingID.payableAmount.amount %><%=billingID.payableAmount.symbol%>
+            </td>
         </tr>
-        <br>
+        
         <tr>
             <td colspan="2">
                 <form action="/crm/insert-fatura" method="post">
