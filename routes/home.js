@@ -7,4 +7,6 @@ const router = express.Router();
 
 router.get('/', homeController.getIndex);
 
+router.get('/axios', homeController.getAxios);
+
 module.exports = router;

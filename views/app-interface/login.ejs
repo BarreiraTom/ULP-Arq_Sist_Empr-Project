@@ -1,0 +1,30 @@
+<%- include('../includes/head.ejs') %>
+<body>
+    <center>
+        <% if (errorMessage) { %>
+        <div class="user-message user-message--error"><%= errorMessage %></div>
+        <% } %>
+        <form action="/login" method="post">
+            <label for="username">Username</label>
+            <br />
+            <input
+                class="<%= validationErrors.find(e => e.param === 'username') ? 'invalid' : '' %>"
+                type="text"
+                name="username"
+                id="username"
+            />
+            <br />
+            <label for="password">Password</label>
+            <br />
+            <input
+                class="<%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %>"
+                type="password"
+                name="password"
+                id="password"
+            />
+            <br />
+            <button type="submit">Login</button>
+        </form>
+    </center>
+</body>
+<%- include('../includes/footer.ejs') %>

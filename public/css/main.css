@@ -87,3 +87,7 @@ header .menu:hover {
 .billingID tr th:last-child {
     text-align: right !important;
 }
+
+input.invalid{
+  border-color: red;
+}
