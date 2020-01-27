@@ -50,6 +50,15 @@ header .menu:hover {
     color: var(--color-dGray) !important;
 }
 
+.logOutBtn{
+    height: 4rem;
+    width: 4rem;
+    padding: 0;
+    margin: 0;
+    background-color: var(--color-dGray);
+    color: var(--color-white);
+}
+
 .myTable {
     width: 95% !important;
     margin: auto !important;
