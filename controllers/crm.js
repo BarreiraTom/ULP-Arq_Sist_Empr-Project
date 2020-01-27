@@ -1,8 +1,8 @@
 const zoho = require('@trifoia/zcrmsdk');
 const config = require('./zoho.config');
 
-const Faturas= require("../models/faturas")
-const Encomendas= require("../models/encomendas")
+const Faturas = require('../models/faturas');
+const Encomendas = require('../models/encomendas');
 
 exports.getCRMFaturas = (req, res, next) => {
     zoho.initialize(config)
@@ -15,10 +15,9 @@ exports.getCRMFaturas = (req, res, next) => {
                 }
             })
                 .then(response => {
-                    console.log(JSON.parse(response.body).data);
                     res.render('app-interface/crm/faturas', {
                         pageTitle: 'CRM Faturas',
-                        path: 'app-interface/crm/faturas',
+                        path: '/app-interface/crm/faturas',
                         faturas: JSON.parse(response.body).data
                     });
                 })
@@ -44,16 +43,16 @@ exports.postCRMFatura = (req, res, next) => {
                 ]
             }
         }).then(() => {
-            const fatura= new Faturas({
+            const fatura = new Faturas({
                 Name: req.body.fatura,
                 NIF: req.body.nif,
                 Entidade: req.body.entidade,
                 Total: req.body.total,
                 Data: req.body.data.substring(0, 10)
-            })
+            });
             fatura.save().then(() => {
                 res.redirect('/crm/faturas');
-            })
+            });
         });
     });
 };
@@ -71,7 +70,7 @@ exports.getCRMEncomendas = (req, res, next) => {
                 .then(response => {
                     res.render('app-interface/crm/encomendas', {
                         pageTitle: 'CRM Encomendas',
-                        path: 'app-interface/crm/encomendas',
+                        path: '/app-interface/crm/encomendas',
                         encomendas: JSON.parse(response.body).data
                     });
                 })
@@ -99,17 +98,17 @@ exports.postCRMEncomendas = (req, res, next) => {
             }
         })
             .then(() => {
-                const encomenda= new Encomendas({
+                const encomenda = new Encomendas({
                     Name: req.body.order,
                     Nome: req.body.nome,
                     NIF: req.body.nif,
                     Entidade: req.body.entidade,
                     Total: req.body.total,
                     Data: req.body.data.substring(0, 10)
-                })
+                });
                 encomenda.save().then(() => {
                     res.redirect('/crm/encomendas');
-                })
+                });
             })
             .catch(error => {
                 console.log(error);

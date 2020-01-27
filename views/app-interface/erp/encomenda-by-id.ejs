@@ -32,22 +32,51 @@
         </tr>
         <tr>
             <th>Descrição</th>
-            <th>Preço</th>
+        </tr>
+
+        <% for(document of orderID.documentLines){ %>
+        <tr>
+            <td><%= document.salesItemDescription %></td>
+        </tr>
+        <% } %>
+
+        <tr>
+            <th colspan="2">Preço</th>
         </tr>
         <tr>
-            <td><%= orderID.documentLines[0].salesItemDescription %></td>
-            <td><%= orderID.payableAmount.amount %><%=orderID.payableAmount.symbol%></td>
+            <td colspan="2">
+                <%= orderID.payableAmount.amount %><%=orderID.payableAmount.symbol%>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <form action="/crm/insert-encomenda" method="post">
+                    <input type="hidden" name="order" value="<%= orderID.naturalKey %> " />
+                    <input
+                        type="hidden"
+                        name="nome"
+                        value="<%= orderID.buyerCustomerPartyName %> "
+                    />
+                    <input type="hidden" name="data" value="<%= orderID.documentDate %> " />
+                    <input
+                        type="hidden"
+                        name="entidade"
+                        value="<%= orderID.accountingPartyName %> "
+                    />
+                    <input
+                        type="hidden"
+                        name="nif"
+                        value="<%= orderID.buyerCustomerPartyTaxId %> "
+                    />
+                    <input
+                        type="hidden"
+                        name="total"
+                        value="<%= orderID.payableAmount.amount %> "
+                    />
+                    <button type="submit">Enviar</button>
+                </form>
+            </td>
         </tr>
     </table>
-
-    <form action="/crm/insert-encomenda" method="post">
-        <input type="hidden" name="order" value="<%= orderID.naturalKey %> " />
-        <input type="hidden" name="nome" value="<%= orderID.buyerCustomerPartyName %> " />
-        <input type="hidden" name="data" value="<%= orderID.documentDate %> " />
-        <input type="hidden" name="entidade" value="<%= orderID.accountingPartyName %> " />
-        <input type="hidden" name="nif" value="<%= orderID.buyerCustomerPartyTaxId %> " />
-        <input type="hidden" name="total" value="<%= orderID.payableAmount.amount %> " />
-        <button type="submit">Enviar</button>
-    </form>
 </body>
 <%- include('../../includes/footer.ejs') %>

@@ -1,7 +1,12 @@
 <%- include('../includes/head.ejs') %>
 <body>
     <%- include('../includes/navigation.ejs') %>
-    <%- test %> 
-    <a class="logOutBtn" href="/logout">Log Out</a>
+    <h1><%- test %></h1>
+    <button class="logOutBtn" onclick="logOut()">Log Out</button>
 </body>
+<script>
+    function logOut(){
+        window.location.href = "/logout";
+    }
+</script>
 <%- include('../includes/footer.ejs') %>

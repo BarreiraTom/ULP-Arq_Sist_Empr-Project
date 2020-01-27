@@ -66,7 +66,7 @@ exports.getFaturaByID = (req, res, next) => {
             .then(respBody => {
                 res.render('app-interface/erp/fatura-by-id', {
                     pageTitle: 'Fatura ' + JSON.parse(respBody).naturalKey,
-                    path: '/app-interface/erp/fatura-by-id',
+                    path: '/app-interface/erp/faturas',
                     billingID: JSON.parse(respBody)
                 });
             })
@@ -139,7 +139,7 @@ exports.getEncomendaByID = (req, res, next) => {
             .then(respBody => {
                 res.render('app-interface/erp/encomenda-by-id', {
                     pageTitle: 'Encomenda ' + JSON.parse(respBody).naturalKey,
-                    path: '/app-interface/erp/encomenda-by-id',
+                    path: '/app-interface/erp/encomendas',
                     orderID: JSON.parse(respBody)
                 });
             })
