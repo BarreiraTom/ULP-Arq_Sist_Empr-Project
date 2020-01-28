@@ -22,7 +22,7 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
-.logScreen{
+.logScreen {
     vertical-align: middle;
     text-align: center;
     width: 20em;
@@ -31,8 +31,9 @@ h1 {
     box-shadow: var(--color-lGray) 0 0 1rem 1rem inset;
     border-radius: 10rem;
     position: absolute;
-    right: 0;left: 0;
-    top:30%;
+    right: 0;
+    left: 0;
+    top: 30%;
     margin: auto;
 }
 
@@ -72,7 +73,7 @@ header .menu:hover {
     color: var(--color-dGray) !important;
 }
 
-.logOutBtn{
+.logOutBtn {
     transition: 1s;
     margin: auto;
     position: absolute;
@@ -81,7 +82,7 @@ header .menu:hover {
     right: 0;
     height: 12rem;
     width: 12rem;
-    border-radius: 50%;;
+    border-radius: 50%;
     padding: 0;
     border: 0;
     font-size: 16pt;
@@ -90,7 +91,7 @@ header .menu:hover {
     color: var(--color-white);
     vertical-align: middle;
 }
-.logOutBtn:hover{
+.logOutBtn:hover {
     transition: 1s;
     animation: btn 0.3s infinite;
 }
@@ -127,14 +128,29 @@ header .menu:hover {
     text-align: right !important;
 }
 
-input.invalid{
-  border-color: red;
+input.invalid {
+    border-color: red;
 }
 
-@keyframes btn{
-    0%{background-image: radial-gradient(red, rgb(0, 207, 0), yellow); transform:rotate(0deg);}
-    25%{background-image: radial-gradient(rgb(0, 132, 255), red, rgb(0, 207, 0)); transform:rotate(90deg);}
-    50%{background-image: radial-gradient(yellow, rgb(0, 132, 255), red); transform:rotate(180deg);}
-    75%{background-image: radial-gradient(rgb(0, 207, 0), yellow, rgb(0, 132, 255)); transform:rotate(270deg);}
-    100%{background-image: radial-gradient(red, rgb(0, 207, 0), yellow); transform:rotate(360deg);}
+@keyframes btn {
+    0% {
+        background-image: radial-gradient(red, rgb(0, 207, 0), yellow);
+        transform: rotate(0deg);
+    }
+    25% {
+        background-image: radial-gradient(rgb(0, 132, 255), red, rgb(0, 207, 0));
+        transform: rotate(90deg);
+    }
+    50% {
+        background-image: radial-gradient(yellow, rgb(0, 132, 255), red);
+        transform: rotate(180deg);
+    }
+    75% {
+        background-image: radial-gradient(rgb(0, 207, 0), yellow, rgb(0, 132, 255));
+        transform: rotate(270deg);
+    }
+    100% {
+        background-image: radial-gradient(red, rgb(0, 207, 0), yellow);
+        transform: rotate(360deg);
+    }
 }

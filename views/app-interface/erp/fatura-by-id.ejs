@@ -68,6 +68,7 @@
                         name="total"
                         value="<%= billingID.payableAmount.amount %> "
                     />
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                     <button type="submit">Enviar</button>
                 </form>
             </td>

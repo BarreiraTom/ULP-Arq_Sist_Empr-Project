@@ -13,7 +13,8 @@
                     type="text"
                     name="username"
                     id="username"
-                />
+                    value="<%= oldInput.username %>">
+                
                 <br />
                 <label for="password">Password</label>
                 <br />
@@ -22,8 +23,10 @@
                     type="password"
                     name="password"
                     id="password"
-                />
+                    value="<%= oldInput.password %>">
+                
                 <br />
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                 <button type="submit">Login</button>
             </form>
         </div>
