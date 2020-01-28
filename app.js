@@ -25,8 +25,6 @@ const isAuth = require('./middleware/is-auth');
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
-
-
 const authRoutes = require('./routes/auth');
 const erpRoutes = require('./routes/erp');
 const crmRoutes = require('./routes/crm');

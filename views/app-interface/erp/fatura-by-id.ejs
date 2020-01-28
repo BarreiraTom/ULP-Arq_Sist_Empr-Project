@@ -4,27 +4,24 @@
     <table class="billingID">
         <tr>
             <th>Fatura</th>
-            <th>Data</th>
+            
+            <th colspan="2">Data</th>
         </tr>
         <tr>
             <td><%= billingID.naturalKey %></td>
-            <td><%= billingID.documentDate.replace("T", " ") %></td>
+            <td colspan="2"><%= billingID.documentDate.replace("T", " ") %></td>
         </tr>
         <tr>
-            <th></th>
-            <th>Entidade</th>
+            <th colspan="3">Entidade</th>
         </tr>
         <tr>
-            <td></td>
-            <td><%= billingID.accountingPartyName %></td>
+            <td colspan="3"><%= billingID.accountingPartyName %></td>
         </tr>
         <tr>
-            <th></th>
-            <th>Armazem</th>
+            <th colspan="3">Armazem</th>
         </tr>
         <tr>
-            <td></td>
-            <td><%= billingID.documentLines[0].warehouseDescription %></td>
+            <td colspan="3"><%= billingID.documentLines[0].warehouseDescription %></td>
         </tr>
         <tr>
             <td><br /><br /><br /><br /><br /><br /></td>
@@ -32,24 +29,28 @@
         </tr>
         <tr>
             <th>Descrição</th>
+            <th>Quantidade</th>
+            <th>Preço unitario</th>
         </tr>
         <% for(bill of billingID.documentLines){ %>
         <tr>
-            <td><%= bill.complementaryDescription %></td>
+            <td><%= bill.description %></td>
+            <td>x<%= bill.quantity %></td>
+            <td><%= bill.grossValue.amount %><%= bill.grossValue.symbol %></td>
         </tr>
         <% } %>
 
         <tr>
-            <th colspan="2">Preço</th>
+            <th colspan="3">Preço</th>
         </tr>
         <tr>
-            <td colspan="2">
+            <td colspan="3">
                 <%= billingID.payableAmount.amount %><%=billingID.payableAmount.symbol%>
             </td>
         </tr>
-        
+
         <tr>
-            <td colspan="2">
+            <td colspan="3">
                 <form action="/crm/insert-fatura" method="post">
                     <input type="hidden" name="fatura" value="<%= billingID.naturalKey %> " />
                     <input type="hidden" name="data" value="<%= billingID.documentDate %> " />
@@ -68,8 +69,9 @@
                         name="total"
                         value="<%= billingID.payableAmount.amount %> "
                     />
-                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                    <button type="submit">Enviar</button>
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+                    <button type="submit">Enviar CRM</button>
+                    <button type="button">Gerar Fatura</button>
                 </form>
             </td>
         </tr>
