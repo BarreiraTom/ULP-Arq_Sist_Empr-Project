@@ -72,7 +72,7 @@ exports.postLogin = (req, res, next) => {
                             res.redirect('/');
                         });
                     }
-                    return res.status(422).render('auth/login', {
+                    return res.status(422).render('app-interface/login', {
                         path: '/login',
                         pageTitle: 'Login',
                         errorMessage: 'Invalid email or password.',

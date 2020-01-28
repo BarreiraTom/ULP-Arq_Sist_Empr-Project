@@ -64,6 +64,7 @@ exports.getFaturaByID = (req, res, next) => {
             }
         })
             .then(respBody => {
+                // res.json(JSON.parse(respBody));
                 res.render('app-interface/erp/fatura-by-id', {
                     pageTitle: 'Fatura ' + JSON.parse(respBody).naturalKey,
                     path: '/app-interface/erp/faturas',
