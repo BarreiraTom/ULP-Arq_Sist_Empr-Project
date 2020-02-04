@@ -6,7 +6,8 @@
         <% } %>
         <div class="logScreen">
             <form action="/login" method="post">
-                <label for="username">Username</label>
+                <span class="login-header">Wellcome!</span>
+                <label for="username" class=" labels">Username</label>
                 <br />
                 <input
                     class="<%= validationErrors.find(e => e.param === 'username') ? 'invalid' : '' %>"
@@ -16,7 +17,7 @@
                     value="<%= oldInput.username %>">
                 
                 <br />
-                <label for="password">Password</label>
+                <label for="password" class=" labels">Password</label>
                 <br />
                 <input
                     class="<%= validationErrors.find(e => e.param === 'password') ? 'invalid' : '' %>"
@@ -27,7 +28,7 @@
                 
                 <br />
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-                <button type="submit">Login</button>
+                <button type="submit" class="login-btn">Login</button>
             </form>
         </div>
     </center>

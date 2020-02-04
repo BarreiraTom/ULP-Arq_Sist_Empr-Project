@@ -71,7 +71,7 @@
                     />
                     <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
                     <button type="submit">Enviar CRM</button>
-                    <button type="button">Gerar Fatura</button>
+                    <button type="button" onclick="window.location.href = '/erp/fatura-pdf/<%= billingID.id%>'">Gerar Fatura</button>
                 </form>
             </td>
         </tr>

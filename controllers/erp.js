@@ -77,6 +77,16 @@ exports.getFaturaByID = (req, res, next) => {
     });
 };
 
+exports.getFaturaByIDPDF = (req, res, next) => {
+    const billingID = req.params.id;
+
+    res.render('app-interface/erp/fatura-pdf', {
+        pageTitle: 'Fatura ' + billingID,
+        path: '/app-interface/erp/faturas',
+        billingID: billingID
+    });
+};
+
 //
 //ENCOMENDAS
 //

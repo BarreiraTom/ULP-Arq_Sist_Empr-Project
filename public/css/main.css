@@ -3,6 +3,7 @@
     --color-lBlue: #bbcfff;
     --color-dGray: #515052;
     --color-lGray: #f0efef;
+    --color-mGray: #ccc;
     --color-white: #fffffa;
 }
 
@@ -12,6 +13,7 @@ body {
     padding: 0 !important;
     min-height: 100vh !important;
     background-color: var(--color-lGray) !important;
+    overflow: hidden;
 }
 h1 {
     margin: 0;
@@ -25,15 +27,36 @@ h1 {
     vertical-align: middle;
     text-align: center;
     width: 20em;
-    padding: 5rem;
+    height: 23em;
+    padding: 3.5rem;
     background-color: var(--color-white);
-    box-shadow: var(--color-lGray) 0 0 1rem 1rem inset;
-    border-radius: 10rem;
+    border-radius: 4px;
     position: absolute;
     right: 0;
     left: 0;
     top: 30%;
     margin: auto;
+}
+.login-header {
+    display: block;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+.labels {
+    font-weight: lighter;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+}
+
+input {
+    border: 1px solid var(--color-mGray);
+    border-radius: 3px;
+}
+
+.login-btn {
+    margin: 1.5rem;
 }
 
 header {
@@ -129,6 +152,12 @@ header .menu:hover {
 
 input.invalid {
     border-color: red;
+}
+
+object {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 @keyframes btn {
